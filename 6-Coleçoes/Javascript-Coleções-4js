@@ -1,0 +1,21 @@
+function calculaModa(array){
+    // escreve aqui a função
+    let cont = 0;
+    let nsei = -Infinity
+    let naotendi = {};
+    array.forEach( number =>{
+        if(!naotendi[number]){
+            naotendi[number] = 1;
+        }else{
+            naotendi[number] +=1;
+        }
+    })
+    for(let i in naotendi){
+        const total = naotendi[i];
+        if(total > cont){
+            cont = total;
+            nsei = i;
+        }
+    }
+    return Number(nsei)
+}
